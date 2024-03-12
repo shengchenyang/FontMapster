@@ -42,7 +42,7 @@ class Mapster:
             skip=skip,
             font_size_decrease=font_size_decrease,
             ocr=ocr,
-            show=show
+            show=show,
         )
 
         self.font = TTFont(font_path)

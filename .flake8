@@ -17,8 +17,6 @@ exclude =
 
 per-file-ignores =
 # E501: line too long
-    fontmapster/main.py:E501
-    tests/test_ocr.py:E501
-
 # F841: local variable 'xxx' is assigned to but never used
-    tests/test_ocr.py:F841
+    fontmapster/main.py:E501
+    tests/test_ocr.py:E501, F841
