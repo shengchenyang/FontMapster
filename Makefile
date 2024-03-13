@@ -1,4 +1,4 @@
-.PHONY: start clean build install build_dist test release pytest check
+.PHONY: start build install release test check clean
 
 refresh: clean build install
 
@@ -43,12 +43,6 @@ build:
 install:
 	$(PIPINSTALL)
 
-build_dist:
-	make clean
-	python setup.py sdist bdist_wheel
-	$(PIPINSTALL)
-	make test
-
 release:
 	poetry publish
 
@@ -58,10 +52,6 @@ test:
 	coverage combine
 	coverage report
 	make clean
-
-pytest:
-	poetry install -E "all"
-	pytest -W ignore::DeprecationWarning
 
 check:
 	pre-commit run --all-files
