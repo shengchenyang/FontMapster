@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fontmapster"
-version = "0.0.1"
+version = "0.1.0"
 description = "动态字体映射工具"
 authors = ["ayuge <ayugesheng@gmail.com>"]
 readme = "README.md"
