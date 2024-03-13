@@ -1,5 +1,9 @@
 # FontMapster 项目说明
 
+![license](https://img.shields.io/github/license/shengchenyang/FontMapster)
+![python support](https://img.shields.io/badge/python-3.8%2B-blue)
+![codecov](https://codecov.io/gh/shengchenyang/FontMapster/graph/badge.svg?token=SdVS49h3hd)
+
 ## 简介
 
 `fontmapster` 是一个获取动态字体映射的工具，包含通过非 `ocr` 及 `ocr` 通用的方式来获取动态字体加密的真实映射功能。
