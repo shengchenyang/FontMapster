@@ -12,7 +12,7 @@ class FontCfgArgs:
     border_size: Optional[int] = field(default=0)
     skip: Union[int, List[int]] = field(default=0)
     font_size_decrease: Optional[int] = field(default=0)
-    ocr: ocr_choicesT = field(default="rapidocr")
+    ocr: Optional[ocr_choicesT] = field(default=None)
     show: bool = field(default=False)
 
 

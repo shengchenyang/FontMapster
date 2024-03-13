@@ -1,6 +1,6 @@
 import io
 from math import ceil, sqrt
-from typing import TYPE_CHECKING, List, Union
+from typing import TYPE_CHECKING, List, Optional, Union
 
 import numpy
 from fontTools.ttLib import TTFont
@@ -20,7 +20,7 @@ if TYPE_CHECKING:
 
 
 class Mapster:
-    ocr_cur: Union["RapidOCR", "CnOcr"]
+    ocr_cur: Union["RapidOCR", "CnOcr", None]
 
     def __init__(
         self,
@@ -31,7 +31,7 @@ class Mapster:
         border_size: int = 0,
         skip: Union[int, List[int]] = 0,
         font_size_decrease: int = 0,
-        ocr: "ocr_choicesT" = "rapidocr",
+        ocr: Optional["ocr_choicesT"] = None,
         show: bool = False,
     ) -> None:
         self._cfg = FontCfgArgs(
@@ -53,10 +53,13 @@ class Mapster:
             import cnocr
 
             self.ocr_cur = cnocr.CnOcr(det_model_name="ch_PP-OCRv4")
-        else:
+        elif self._cfg.ocr == "rapidocr":
             from rapidocr_onnxruntime import RapidOCR
 
             self.ocr_cur = RapidOCR()
+
+        else:
+            self.ocr_cur = None
 
     def get_map(self) -> FontMapsterResult:
         cmap_map = {}

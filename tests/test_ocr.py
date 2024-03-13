@@ -84,7 +84,7 @@ def test_ocr_other():
         ocr="cnocr",
         show=True,
     )
-    font_mapster_res = no_use_fm.get_ocr_map()
+    _ = no_use_fm.get_ocr_map()
 
     fail_fm = Mapster(
         font_path=f"{tests_dir}/fonts/xz.woff",
